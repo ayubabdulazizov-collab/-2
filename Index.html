@@ -1,0 +1,1375 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Чётки</title>
+<meta name="theme-color" content="#17121d">
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAEeElEQVR4nO3dPY4UOxSGYQ8iRyIhYhvEbIBtkLAeErbBBojZDTsgKIRKM/1NV1X7HJ+f98kuGqSS+21fj9tunj68/ziAW96sfgDERRyQiAMScUAiDkjEAYk4IBEHJOKARByQiAMScUAiDkjEAYk4IBEHJOKARByQiAMScUAiDkjEAent6geI4tf3T/v//Pzt96onieOJeyvPsthrnkjrOF7JYq9tIn3XHAfLOPWTxfSNA3c1jePsZNBz8mgaB47oGMe1aaDh5NExDhyUZhMs9SZV0odPEMfN+Xz7w/ijnPrhQ8dx93/zkUc59cNv4q457Daprr0ep/5WjR22uHFguaBxWG9SnZ08jKaNaz/vJmgciCBiHD6bVMcnA9Np45G/ZS30byvWtled8xxK6zg2NxNpnsWGOP6hhpcirjkQRMQ4HDap7KR++GcixoEggsZhukllLfXD7wWNAxHEjcNok8pH6of/L8G9ldSbVKkfPkEcm9SbVEkfPk0c8Bd3zYHliAMScUAiDkh+n8omXbFHsGroPH5bSf27/lprh842Dr4d5bIIQ2e45qhxd2OJIEPHghSSVRxl7m74izN0zByQTOKodHfDWaihY+aARByQiAMScUAyiaPS3Q1noYaOmQOSVRxl7m74izN0zByQDOOocXdjiSBDx3mO0Cqf59jjJNhllU+CISkWpJCIAxLfCTbGGF+/vHv5hz9+/vF/klC6rzluZrHXOZG+cdzNYq9nIk3XHKfKuPDzNXSM49or3bCPdnE88hp366NdHDiuVxyPv/VbTR694sApjeKY9abvM3k0igNnGW6f8xm9EbeBNYkj9b+0G5nzwE6Oo8C/tBvTkoGdueYI8pUj9awaWBakkKbFEecrR5RZn6w6f0K7cGCZOSDNiSPUV4684vE3ffBp45G/9RIzB6R2cTzy1u92HqxdHOPqa9ytjNEzjnH+lW5Yxph4wPjCIijCPmn80+cLB7b7vZXttefeyk0zryacajzCtJHFqoFtuubAETPjCPKVI/WsGliTG298W4sR54E1vA7JSTAjbgPb964s7mJBCok4IBEHJOKARByQiAMScUAiDkjEASnEeQ422kfIQVi8fc5HdCPwICyL4+ABltqJBB+ENWsOrlyPDIPAghTSgjjiX7l2kGIQmDkgeceR5cq1qSyDwMwBiTggEQck4oDkHce1zb5i+6RZBoGZA9KCOM6+A4pNG5sUg8DMAWlNHFy5HhkGgfMc64UdhBB3ZacfgnI4VZXxmc8KEcdEDu/CsG/06erE4XCqKvjBremK/LbicKoq/sGt6YrEAQsV4nA4VZXi4NZ0FeKAkfRxOJyqynJwa7r0ccAOcUAiDkjEASl9HA6nqrIc3JoufRywUyEOh1NVKQ5uTVchDhgpEofDqar4B7emq/OR/YbzHBNVi2OT8SRYQDXjwBRF1hywQByQiAMScUAiDkjEAYk4IBEHJOKARByQiAMScUAiDkjEAYk4IBEHJOKARByQiAMScUAiDkjEAYk4IBEHpL8NGbQoAInbSAAAAABJRU5ErkJggg==">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAEeElEQVR4nO3dPY4UOxSGYQ8iRyIhYhvEbIBtkLAeErbBBojZDTsgKIRKM/1NV1X7HJ+f98kuGqSS+21fj9tunj68/ziAW96sfgDERRyQiAMScUAiDkjEAYk4IBEHJOKARByQiAMScUAiDkjEAYk4IBEHJOKARByQiAMScUAiDkjEAent6geI4tf3T/v//Pzt96onieOJeyvPsthrnkjrOF7JYq9tIn3XHAfLOPWTxfSNA3c1jePsZNBz8mgaB47oGMe1aaDh5NExDhyUZhMs9SZV0odPEMfN+Xz7w/ijnPrhQ8dx93/zkUc59cNv4q457Daprr0ep/5WjR22uHFguaBxWG9SnZ08jKaNaz/vJmgciCBiHD6bVMcnA9Np45G/ZS30byvWtled8xxK6zg2NxNpnsWGOP6hhpcirjkQRMQ4HDap7KR++GcixoEggsZhukllLfXD7wWNAxHEjcNok8pH6of/L8G9ldSbVKkfPkEcm9SbVEkfPk0c8Bd3zYHliAMScUAiDkh+n8omXbFHsGroPH5bSf27/lprh842Dr4d5bIIQ2e45qhxd2OJIEPHghSSVRxl7m74izN0zByQTOKodHfDWaihY+aARByQiAMScUAyiaPS3Q1noYaOmQOSVRxl7m74izN0zByQDOOocXdjiSBDx3mO0Cqf59jjJNhllU+CISkWpJCIAxLfCTbGGF+/vHv5hz9+/vF/klC6rzluZrHXOZG+cdzNYq9nIk3XHKfKuPDzNXSM49or3bCPdnE88hp366NdHDiuVxyPv/VbTR694sApjeKY9abvM3k0igNnGW6f8xm9EbeBNYkj9b+0G5nzwE6Oo8C/tBvTkoGdueYI8pUj9awaWBakkKbFEecrR5RZn6w6f0K7cGCZOSDNiSPUV4684vE3ffBp45G/9RIzB6R2cTzy1u92HqxdHOPqa9ytjNEzjnH+lW5Yxph4wPjCIijCPmn80+cLB7b7vZXttefeyk0zryacajzCtJHFqoFtuubAETPjCPKVI/WsGliTG298W4sR54E1vA7JSTAjbgPb964s7mJBCok4IBEHJOKARByQiAMScUAiDkjEASnEeQ422kfIQVi8fc5HdCPwICyL4+ABltqJBB+ENWsOrlyPDIPAghTSgjjiX7l2kGIQmDkgeceR5cq1qSyDwMwBiTggEQck4oDkHce1zb5i+6RZBoGZA9KCOM6+A4pNG5sUg8DMAWlNHFy5HhkGgfMc64UdhBB3ZacfgnI4VZXxmc8KEcdEDu/CsG/06erE4XCqKvjBremK/LbicKoq/sGt6YrEAQsV4nA4VZXi4NZ0FeKAkfRxOJyqynJwa7r0ccAOcUAiDkjEASl9HA6nqrIc3JoufRywUyEOh1NVKQ5uTVchDhgpEofDqar4B7emq/OR/YbzHBNVi2OT8SRYQDXjwBRF1hywQByQiAMScUAiDkjEAYk4IBEHJOKARByQiAMScUAiDkjEAYk4IBEHJOKARByQiAMScUAiDkjEAYk4IBEHpL8NGbQoAInbSAAAAABJRU5ErkJggg==">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Чётки">
+<style>
+:root{
+  --bg:#17121d;
+  --surface:#221b2b;
+  --surface-2:#2c2336;
+  --fg:#f3e9d7;
+  --muted:#9c8fa8;
+  --muted-2:#776a89;
+  --accent:#d7a753;
+  --accent-dim:#7d5f2c;
+  --line:#3a2f47;
+  --danger:#c6604c;
+  --danger-dim:#7a3b2d;
+  --serif:Georgia,'Times New Roman',ui-serif,serif;
+  --sans:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  color-scheme: dark;
+}
+:root[data-theme="dark"]{
+  --bg:#17121d; --surface:#221b2b; --surface-2:#2c2336;
+  --fg:#f3e9d7; --muted:#9c8fa8; --muted-2:#776a89;
+  --accent:#d7a753; --accent-dim:#7d5f2c; --line:#3a2f47;
+}
+:root[data-theme="green"]{
+  --bg:#0f1f16; --surface:#16291d; --surface-2:#1d3425;
+  --fg:#e9f3e3; --muted:#8fac93; --muted-2:#5e7a65;
+  --accent:#7cbf68; --accent-dim:#3c5c35; --line:#28402f;
+}
+:root[data-theme="blue"]{
+  --bg:#0e1826; --surface:#162238; --surface-2:#1d2d49;
+  --fg:#e7edf8; --muted:#8ba0c2; --muted-2:#5c6f91;
+  --accent:#6fb3dc; --accent-dim:#2f5870; --line:#233652;
+}
+:root[data-theme="brown"]{
+  --bg:#1c130c; --surface:#271c12; --surface-2:#332419;
+  --fg:#f3e5d3; --muted:#b29b82; --muted-2:#7e6b56;
+  --accent:#d6915a; --accent-dim:#7a4f2b; --line:#3f2d1d;
+}
+*{box-sizing:border-box;}
+html,body{height:100%;}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--fg);
+  font-family:var(--sans);
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+}
+body::before{
+  content:"";
+  position:fixed;
+  inset:0 0 auto;
+  height:env(safe-area-inset-top,0px);
+  z-index:10;
+  background:var(--surface);
+}
+button{font-family:inherit;}
+
+/* ---------- header ---------- */
+.topbar{
+  position:sticky;
+  top:env(safe-area-inset-top,0px);
+  z-index:10;
+  background:var(--surface);
+  border-bottom:1px solid var(--line);
+  flex-shrink:0;
+}
+.topbar-inner{
+  padding-block:14px;
+  padding-left:max(16px, env(safe-area-inset-left,0px));
+  padding-right:max(16px, env(safe-area-inset-right,0px));
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+}
+.brand{display:flex; flex-direction:column; min-width:0; gap:2px;}
+.brand h1{
+  font-family:var(--serif);
+  font-weight:700;
+  font-size:19px;
+  margin:0;
+  letter-spacing:.2px;
+}
+.brand .word-preview{
+  font-size:13px;
+  color:var(--accent);
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  max-width:46vw;
+}
+.header-btns{display:flex; gap:8px; flex-shrink:0;}
+.icon-btn{
+  width:40px;height:40px;
+  border-radius:50%;
+  border:1px solid var(--line);
+  background:var(--surface-2);
+  color:var(--fg);
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;
+  flex-shrink:0;
+}
+.icon-btn:active{background:var(--accent-dim);}
+.icon-btn svg{width:19px;height:19px;}
+
+/* ---------- counting area ---------- */
+.counter{
+  flex:1;
+  overflow-y:auto;
+  -webkit-overflow-scrolling:touch;
+  background:var(--bg);
+}
+.counter-inner{
+  min-height:100%;
+  padding:18px max(16px, env(safe-area-inset-left,0px)) 28px max(16px, env(safe-area-inset-right,0px));
+  display:flex;
+  flex-direction:column;
+}
+.empty-state{
+  margin:auto;
+  text-align:center;
+  color:var(--muted);
+  padding:24px;
+  max-width:280px;
+}
+.empty-state .bead{
+  width:14px;height:14px;border-radius:50%;
+  background:var(--accent);
+  margin:0 auto 18px;
+  box-shadow:0 0 0 6px var(--surface-2);
+}
+.empty-state p{margin:0 0 6px; font-size:15px; line-height:1.5;}
+.empty-state .sub{font-size:13px; color:var(--muted-2);}
+.empty-state button{
+  margin-top:16px;
+  border:1px solid var(--accent-dim);
+  background:var(--accent-dim);
+  color:var(--fg);
+  padding:10px 18px;
+  border-radius:10px;
+  font-weight:700;
+  font-size:14px;
+  cursor:pointer;
+}
+
+.thread{
+  position:relative;
+  padding-left:26px;
+}
+.thread::before{
+  content:"";
+  position:absolute;
+  left:9px; top:4px; bottom:4px;
+  width:2px;
+  background:var(--line);
+}
+.entry{
+  position:relative;
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  gap:14px;
+  padding:9px 0;
+  animation:rise .18s ease-out;
+}
+.entry::before{
+  content:"";
+  position:absolute;
+  left:-26px; top:50%;
+  transform:translateY(-50%);
+  width:11px;height:11px;border-radius:50%;
+  background:var(--muted-2);
+  border:2px solid var(--bg);
+}
+.entry.current::before{
+  background:var(--accent);
+  width:13px;height:13px;
+}
+.entry .w{
+  font-family:var(--serif);
+  font-weight:700;
+  font-size:19px;
+  color:var(--muted);
+  min-width:0;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  transition:color .18s, font-size .18s;
+}
+.entry .n{
+  font-variant-numeric:tabular-nums;
+  font-weight:800;
+  font-size:19px;
+  color:var(--muted);
+  flex-shrink:0;
+  transition:color .18s, font-size .18s;
+}
+.entry.current .w{color:var(--fg); font-size:27px;}
+.entry.current .n{color:var(--accent); font-size:27px;}
+@keyframes rise{
+  from{opacity:0; transform:translateY(6px);}
+  to{opacity:1; transform:translateY(0);}
+}
+.tap-hint{
+  text-align:center;
+  color:var(--muted-2);
+  font-size:12px;
+  letter-spacing:.3px;
+  padding-top:10px;
+  margin-top:auto;
+}
+
+/* ---------- bottom bar ---------- */
+.bottombar{
+  position:sticky;
+  bottom:0;
+  z-index:10;
+  background:var(--surface);
+  border-top:1px solid var(--line);
+  flex-shrink:0;
+}
+.bottombar-inner{
+  padding-top:12px;
+  padding-bottom:calc(12px + env(safe-area-inset-bottom,0px));
+  padding-left:max(16px, env(safe-area-inset-left,0px));
+  padding-right:max(16px, env(safe-area-inset-right,0px));
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.total{
+  display:flex;
+  flex-direction:column;
+  line-height:1.1;
+}
+.total .num{
+  font-family:var(--serif);
+  font-weight:700;
+  font-size:25px;
+  color:var(--accent);
+  font-variant-numeric:tabular-nums;
+}
+.total .lbl{font-size:11px; color:var(--muted); letter-spacing:.3px;}
+.spacer{flex:1;}
+.btn{
+  border:1px solid var(--line);
+  background:var(--surface-2);
+  color:var(--fg);
+  padding:11px 16px;
+  border-radius:10px;
+  font-size:14px;
+  font-weight:600;
+  cursor:pointer;
+}
+.btn:active{background:var(--accent-dim);}
+.btn.danger{color:#f0c9bd; border-color:var(--danger-dim);}
+.btn.danger:active{background:var(--danger-dim);}
+
+/* ---------- sheets (settings / list) ---------- */
+.sheet-overlay{
+  position:fixed; inset:0;
+  background:rgba(10,7,14,.6);
+  z-index:20;
+  display:flex;
+  align-items:flex-end;
+}
+.sheet{
+  background:var(--surface);
+  width:100%;
+  max-height:min(86vh, 640px);
+  border-radius:20px 20px 0 0;
+  border-top:1px solid var(--line);
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+}
+.sheet-head{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:16px max(18px, env(safe-area-inset-left,0px)) 12px max(18px, env(safe-area-inset-right,0px));
+  border-bottom:1px solid var(--line);
+  flex-shrink:0;
+}
+.sheet-head h2{
+  margin:0; font-family:var(--serif); font-size:18px; font-weight:700;
+}
+.sheet-body{
+  overflow-y:auto;
+  padding:18px max(18px, env(safe-area-inset-left,0px)) calc(24px + env(safe-area-inset-bottom,0px)) max(18px, env(safe-area-inset-right,0px));
+  display:flex; flex-direction:column; gap:22px;
+}
+
+/* list sheet */
+.plist{display:flex; flex-direction:column; gap:10px;}
+.pcard{
+  display:flex; align-items:center; gap:10px;
+  background:var(--surface-2);
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:12px 12px;
+}
+.pcard.active{border-color:var(--accent);}
+.pcard .pmain{flex:1; min-width:0; display:flex; flex-direction:column; gap:2px; text-align:left; background:none; border:0; color:inherit; cursor:pointer; padding:0;}
+.pcard .plabel{font-family:var(--serif); font-size:17px; font-weight:700; color:var(--fg); overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+.pcard .pcount{font-size:12px; color:var(--muted); font-variant-numeric:tabular-nums;}
+.pcard .pactions{display:flex; gap:6px; flex-shrink:0;}
+.pcard .pbtn{
+  width:32px;height:32px; border-radius:8px;
+  border:1px solid var(--line); background:var(--bg);
+  color:var(--muted); display:flex; align-items:center; justify-content:center; cursor:pointer;
+}
+.pcard .pbtn svg{width:15px;height:15px;}
+.pcard .pbtn:active{background:var(--accent-dim); color:var(--fg);}
+.pcard.rename input{
+  flex:1; background:var(--bg); border:1px solid var(--accent); color:var(--fg);
+  border-radius:8px; padding:9px 10px; font-size:16px; font-family:var(--serif);
+}
+.add-row{display:flex; gap:8px;}
+.add-row input{
+  flex:1; background:var(--surface-2); border:1px solid var(--line); color:var(--fg);
+  border-radius:10px; padding:12px 14px; font-size:16px; font-family:var(--serif);
+}
+.add-row button{
+  border:1px solid var(--accent-dim); background:var(--accent-dim); color:var(--fg);
+  border-radius:10px; padding:0 18px; font-weight:700; cursor:pointer;
+}
+
+/* settings sheet fields */
+.field label{
+  display:block;
+  font-size:12px;
+  font-weight:700;
+  color:var(--muted);
+  letter-spacing:.4px;
+  text-transform:uppercase;
+  margin-bottom:8px;
+}
+.field .hint{font-size:12px; color:var(--muted-2); margin-top:6px;}
+.row{display:flex; align-items:center; justify-content:space-between; gap:12px;}
+.switch{position:relative; width:46px; height:27px; flex-shrink:0;}
+.switch input{position:absolute; inset:0; opacity:0; margin:0; cursor:pointer;}
+.switch .track{position:absolute; inset:0; border-radius:14px; background:var(--surface-2); border:1px solid var(--line); transition:background .15s;}
+.switch .thumb{position:absolute; top:2px; left:2px; width:21px; height:21px; border-radius:50%; background:var(--muted); transition:transform .15s, background .15s;}
+.switch input:checked + .track{background:var(--accent-dim); border-color:var(--accent);}
+.switch input:checked + .track .thumb{transform:translateX(19px); background:var(--accent);}
+.voice-row{display:flex; align-items:center; gap:10px;}
+.file-btn{position:relative; overflow:hidden; display:inline-flex;}
+.file-btn input[type=file]{position:absolute; inset:0; opacity:0; cursor:pointer;}
+.voice-name{font-size:13px; color:var(--muted); min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+.status-msg{font-size:12px; margin-top:8px; min-height:16px;}
+.status-msg.err{color:#e59684;}
+.status-msg.ok{color:#9fd3a8;}
+.sec-control{display:flex; align-items:center; gap:12px;}
+.sec-control input[type=range]{flex:1; accent-color:var(--accent);}
+.sec-value{font-variant-numeric:tabular-nums; font-weight:800; color:var(--accent); min-width:52px; text-align:right; font-size:15px;}
+.auto-btn{width:100%; padding:13px; border-radius:10px; border:1px solid var(--accent-dim); background:var(--accent-dim); color:var(--fg); font-weight:700; font-size:15px; cursor:pointer;}
+.auto-btn.running{background:var(--danger-dim); border-color:var(--danger-dim); color:#f6dcd4;}
+.offline-note{font-size:12px; color:var(--muted-2); line-height:1.5;}
+.seg{display:flex; gap:8px; flex-wrap:wrap;}
+.seg button{
+  flex:1; min-width:72px;
+  padding:10px 6px;
+  border-radius:10px;
+  border:1px solid var(--line);
+  background:var(--surface-2);
+  color:var(--muted);
+  font-size:12px;
+  font-weight:700;
+  cursor:pointer;
+  text-align:center;
+}
+.seg button.active{background:var(--accent-dim); border-color:var(--accent); color:var(--fg);}
+.swatches{display:flex; gap:12px;}
+.swatch{
+  width:52px; height:52px; border-radius:50%;
+  border:2px solid var(--line);
+  cursor:pointer;
+  position:relative;
+  flex-shrink:0;
+  padding:0;
+}
+.swatch.active{border-color:var(--accent); box-shadow:0 0 0 3px var(--surface-2);}
+.swatch::after{
+  content:"";
+  position:absolute; inset:6px;
+  border-radius:50%;
+}
+.swatch[data-theme="dark"]{background:#17121d;} .swatch[data-theme="dark"]::after{background:#d7a753;}
+.swatch[data-theme="green"]{background:#0f1f16;} .swatch[data-theme="green"]::after{background:#7cbf68;}
+.swatch[data-theme="blue"]{background:#0e1826;} .swatch[data-theme="blue"]::after{background:#6fb3dc;}
+.swatch[data-theme="brown"]{background:#1c130c;} .swatch[data-theme="brown"]::after{background:#d6915a;}
+.swatch-labels{display:flex; gap:12px; margin-top:6px;}
+.swatch-labels span{width:52px; text-align:center; font-size:11px; color:var(--muted-2);}
+.milestone{
+  position:fixed;
+  left:50%;
+  top:calc(env(safe-area-inset-top,0px) + 66px);
+  transform:translate(-50%,-14px);
+  z-index:15;
+  background:var(--surface-2);
+  border:1px solid var(--accent);
+  border-radius:14px;
+  padding:12px 14px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  box-shadow:0 10px 26px rgba(0,0,0,.35);
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .22s, transform .22s;
+  max-width:min(90vw, 360px);
+}
+.milestone.show{opacity:1; transform:translate(-50%,0); pointer-events:auto;}
+.milestone .mtext{font-family:var(--serif); font-weight:700; font-size:14px; color:var(--fg); white-space:nowrap;}
+.milestone button{
+  border:1px solid var(--line); background:var(--bg); color:var(--fg);
+  border-radius:9px; padding:7px 11px; font-size:12px; font-weight:700; cursor:pointer; flex-shrink:0;
+}
+.milestone button:active{background:var(--accent-dim);}
+.divider{height:1px; background:var(--line); border:0; margin:0;}
+[hidden]{display:none!important;}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <h1>Чётки</h1>
+      <span class="word-preview" id="wordPreview">—</span>
+    </div>
+    <div class="header-btns">
+      <button class="icon-btn" id="openList" aria-label="Список фраз">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+      </button>
+      <button class="icon-btn" id="openSettings" aria-label="Настройки">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.6 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.6a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="milestone" id="milestoneToast">
+  <span class="mtext" id="milestoneText">Круг: 100</span>
+  <button type="button" id="milestoneReset">Сброс</button>
+  <button type="button" id="milestoneContinue">Дальше</button>
+</div>
+
+<div class="counter" id="counterArea">
+  <div class="counter-inner" id="counterInner">
+    <div class="empty-state" id="emptyState" hidden>
+      <div class="bead"></div>
+      <p>Список фраз пуст</p>
+      <div class="sub">Добавьте фразу для счёта в списке</div>
+      <button id="emptyAddBtn">Открыть список</button>
+    </div>
+    <div class="thread" id="thread" hidden></div>
+    <div class="tap-hint" id="tapHint" hidden>Нажимайте на экран — счёт продолжится</div>
+  </div>
+</div>
+
+<div class="bottombar">
+  <div class="bottombar-inner">
+    <div class="total">
+      <span class="num" id="totalNum">0</span>
+      <span class="lbl">всего</span>
+    </div>
+    <div class="spacer"></div>
+    <button class="btn" id="undoBtn" hidden>Назад</button>
+    <button class="btn danger" id="resetBtn">Сбросить</button>
+  </div>
+</div>
+
+<div class="sheet-overlay" id="listOverlay" hidden>
+  <div class="sheet">
+    <div class="sheet-head">
+      <h2>Список фраз</h2>
+      <button class="icon-btn" id="closeList" aria-label="Закрыть">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18"></path><path d="M6 6l12 12"></path></svg>
+      </button>
+    </div>
+    <div class="sheet-body">
+      <div class="plist" id="plist"></div>
+      <div class="add-row">
+        <input type="text" id="addInput" placeholder="Новая фраза" autocomplete="off">
+        <button id="addBtn">Добавить</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sheet-overlay" id="settingsOverlay" hidden>
+  <div class="sheet">
+    <div class="sheet-head">
+      <h2>Настройки</h2>
+      <button class="icon-btn" id="closeSettings" aria-label="Закрыть">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18"></path><path d="M6 6l12 12"></path></svg>
+      </button>
+    </div>
+    <div class="sheet-body">
+      <div class="field">
+        <label>Цвет приложения</label>
+        <div class="swatches" id="themeSwatches">
+          <button type="button" class="swatch" data-theme="dark" aria-label="Тёмный"></button>
+          <button type="button" class="swatch" data-theme="green" aria-label="Зелёный"></button>
+          <button type="button" class="swatch" data-theme="blue" aria-label="Синий"></button>
+          <button type="button" class="swatch" data-theme="brown" aria-label="Коричневый"></button>
+        </div>
+        <div class="swatch-labels"><span>Тёмный</span><span>Зелёный</span><span>Синий</span><span>Коричневый</span></div>
+      </div>
+
+      <hr class="divider">
+
+      <div class="field">
+        <label>Звук при счёте</label>
+        <div class="seg" id="soundSeg">
+          <button type="button" data-mode="none">Выкл</button>
+          <button type="button" data-mode="tick">Тик</button>
+          <button type="button" data-mode="heartbeat">Сердце</button>
+          <button type="button" data-mode="voice">Голос</button>
+        </div>
+        <div class="hint" style="margin:10px 0 0;">«Тик» и «Сердце» — встроенные звуки, запись не нужна</div>
+      </div>
+
+      <hr class="divider">
+
+      <div class="field">
+        <label>Своя запись голоса</label>
+        <div class="voice-row">
+          <span class="file-btn btn">Загрузить запись<input type="file" id="voiceInput" accept="audio/*"></span>
+          <button class="btn danger" id="removeVoice" hidden>Удалить</button>
+        </div>
+        <div class="voice-name" id="voiceName">запись не добавлена</div>
+        <div class="status-msg" id="voiceStatus"></div>
+        <div class="hint" style="margin-top:8px;">Чтобы услышать её при счёте, выберите «Голос» выше</div>
+      </div>
+
+      <hr class="divider">
+
+      <div class="field">
+        <label>Сигнал о круге</label>
+        <div class="hint" style="margin:0 0 10px;">Другой звук и подсказка, когда счёт дойдёт до этого числа (например 33 или 100). Дальше можно сбросить или продолжить — счёт не останавливается.</div>
+        <input type="number" id="targetInput" min="0" step="1" value="100" style="width:100%; background:var(--surface-2); border:1px solid var(--line); color:var(--fg); border-radius:10px; padding:12px 14px; font-size:16px; font-family:var(--serif);">
+        <div class="hint" style="margin-top:6px;">0 — выключить сигнал</div>
+      </div>
+
+      <hr class="divider">
+
+      <div class="field">
+        <label>Экран</label>
+        <div class="row">
+          <span style="font-size:14px;">Не давать экрану гаснуть</span>
+          <span class="switch"><input type="checkbox" id="wakeSwitch"><span class="track"><span class="thumb"></span></span></span>
+        </div>
+        <div class="status-msg" id="wakeStatus"></div>
+      </div>
+
+      <hr class="divider">
+
+      <div class="field">
+        <label>Автоматический счёт</label>
+        <div class="hint" style="margin:0 0 12px;">Счёт и голос повторяются сами с заданным интервалом. Работает и при свёрнутом приложении: не закрывайте его и не выключайте телефон кнопкой</div>
+        <div class="sec-control">
+          <input type="range" id="secRange" min="1" max="30" step="1" value="3">
+          <span class="sec-value" id="secValue">3 сек</span>
+        </div>
+        <button class="auto-btn" id="autoToggle" style="margin-top:14px;">Запустить</button>
+      </div>
+
+      <hr class="divider">
+
+      <div class="field">
+        <label>Без интернета</label>
+        <div class="offline-note">Приложение хранит счёт, список фраз, голос и выбранный цвет прямо в этом браузере и не обращается к интернету во время счёта. Эту страницу можно также скачать одним файлом и открыть прямо на телефоне или компьютере — тогда интернет не нужен вообще, даже для первого открытия.</div>
+      </div>
+
+      <hr class="divider">
+
+      <div class="field">
+        <label>Иконка на экране «Домой»</label>
+        <div class="offline-note">iPhone: откройте ссылку в Safari → кнопка «Поделиться» → «На экран «Домой»».<br>Android: откройте ссылку в Chrome → меню (⋮) → «Добавить на главный экран».</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var STORE_KEY = 'chotki.v2';
+  var MAX_HISTORY = 400;
+  var MAX_AUDIO_BYTES = 3 * 1024 * 1024;
+
+  function uid(){
+    return 'c' + Date.now().toString(36) + Math.random().toString(36).slice(2,7);
+  }
+
+  function defaultCounters(){
+    var labels = [
+      'СубханаЛлах',
+      'Альхамдулиллях',
+      'Аллаху Акбар',
+      'Ля иляха илля Ллах',
+      'Астагфируллах',
+      'Ля хавля ва ля куввата илля биЛлях',
+      'СубханаЛлахи ва бихамдихи'
+    ];
+    return labels.map(function(l){ return { id: uid(), label: l, count: 0, history: [] }; });
+  }
+
+  var state = {
+    counters: null,
+    activeId: null,
+    soundMode: 'none',
+    audioData: null,
+    audioName: '',
+    autoSec: 3,
+    theme: 'dark',
+    target: 100,
+    keepAwake: true
+  };
+
+  function loadState(){
+    var migratedPlaySound, migratedHadAudio;
+    try{
+      var raw = localStorage.getItem(STORE_KEY);
+      if(raw){
+        var parsed = JSON.parse(raw);
+        migratedPlaySound = parsed.playSound;
+        migratedHadAudio = parsed.audioData;
+        for(var k in state){ if(parsed.hasOwnProperty(k)) state[k] = parsed[k]; }
+        if(!parsed.hasOwnProperty('soundMode')){
+          state.soundMode = (migratedPlaySound && migratedHadAudio) ? 'voice' : 'none';
+        }
+      }
+    }catch(e){ /* storage unavailable or corrupt — start fresh */ }
+    if(!state.counters || !state.counters.length){
+      state.counters = defaultCounters();
+    }
+    if(!state.activeId || !state.counters.some(function(c){return c.id===state.activeId;})){
+      state.activeId = state.counters[0] ? state.counters[0].id : null;
+    }
+  }
+  function saveState(){
+    try{ localStorage.setItem(STORE_KEY, JSON.stringify(state)); }
+    catch(e){ /* quota exceeded or storage blocked — continue without persistence */ }
+  }
+
+  loadState();
+
+  function getActive(){
+    return state.counters.find(function(c){ return c.id === state.activeId; }) || null;
+  }
+
+  var wordPreview = document.getElementById('wordPreview');
+  var counterArea = document.getElementById('counterArea');
+  var emptyState = document.getElementById('emptyState');
+  var emptyAddBtn = document.getElementById('emptyAddBtn');
+  var thread = document.getElementById('thread');
+  var tapHint = document.getElementById('tapHint');
+  var totalNum = document.getElementById('totalNum');
+  var resetBtn = document.getElementById('resetBtn');
+  var undoBtn = document.getElementById('undoBtn');
+
+  var openList = document.getElementById('openList');
+  var closeList = document.getElementById('closeList');
+  var listOverlay = document.getElementById('listOverlay');
+  var plist = document.getElementById('plist');
+  var addInput = document.getElementById('addInput');
+  var addBtn = document.getElementById('addBtn');
+
+  var openSettings = document.getElementById('openSettings');
+  var closeSettings = document.getElementById('closeSettings');
+  var settingsOverlay = document.getElementById('settingsOverlay');
+  var voiceInput = document.getElementById('voiceInput');
+  var voiceName = document.getElementById('voiceName');
+  var voiceStatus = document.getElementById('voiceStatus');
+  var removeVoice = document.getElementById('removeVoice');
+  var themeSwatches = document.getElementById('themeSwatches');
+  var soundSeg = document.getElementById('soundSeg');
+  var targetInput = document.getElementById('targetInput');
+  var milestoneToast = document.getElementById('milestoneToast');
+  var milestoneText = document.getElementById('milestoneText');
+  var milestoneReset = document.getElementById('milestoneReset');
+  var milestoneContinue = document.getElementById('milestoneContinue');
+  var secRange = document.getElementById('secRange');
+  var secValue = document.getElementById('secValue');
+  var autoToggle = document.getElementById('autoToggle');
+
+  var audioEl = null;
+  var autoTimer = null;
+  var resetArmed = false;
+  var resetArmTimeout = null;
+
+  /* ---------- sounds: rendered to WAV and played through <audio> elements.
+     Once unlocked by the first tap, these keep working after the app is
+     minimized and reopened, without another tap. ---------- */
+  var RATE = 22050;
+  var sfxCache = {};
+  var sfxEl = null, chimeEl = null, audioUnlocked = false;
+
+  function wavUrl(dur, fn){
+    var n = Math.floor(RATE * dur);
+    var buf = new ArrayBuffer(44 + n*2);
+    var v = new DataView(buf);
+    function s(o, t){ for(var i=0;i<t.length;i++) v.setUint8(o+i, t.charCodeAt(i)); }
+    s(0,'RIFF'); v.setUint32(4, 36+n*2, true); s(8,'WAVE'); s(12,'fmt ');
+    v.setUint32(16,16,true); v.setUint16(20,1,true); v.setUint16(22,1,true);
+    v.setUint32(24,RATE,true); v.setUint32(28,RATE*2,true); v.setUint16(32,2,true); v.setUint16(34,16,true);
+    s(36,'data'); v.setUint32(40,n*2,true);
+    for(var i=0;i<n;i++){
+      var x = fn(i / RATE);
+      if(x > 1) x = 1; else if(x < -1) x = -1;
+      v.setInt16(44 + i*2, Math.round(x * 32767), true);
+    }
+    return URL.createObjectURL(new Blob([buf], {type:'audio/wav'}));
+  }
+  function envAD(t, peak, attack, dur){
+    if(t < 0 || t > dur) return 0;
+    if(t < attack) return peak * (t / attack);
+    return peak * Math.pow(0.0001 / peak, (t - attack) / (dur - attack));
+  }
+  function thumpSample(t, f, peak, dur){
+    if(t < 0 || t > dur) return 0;
+    var phase = 2 * Math.PI * f * dur * (Math.pow(0.6, t / dur) - 1) / Math.log(0.6);
+    return Math.sin(phase) * envAD(t, peak, 0.012, dur);
+  }
+  function toneSample(t, f, amp, dur){
+    if(t < 0 || t > dur) return 0;
+    return Math.sin(2 * Math.PI * f * t) * envAD(t, amp, 0.02, dur);
+  }
+  var sfxDefs = {
+    tick: [0.06, function(t){
+      var sq = Math.sin(2*Math.PI*1800*t) >= 0 ? 1 : -1;
+      return sq * envAD(t, 0.4, 0.002, 0.045);
+    }],
+    heart: [0.4, function(t){
+      return thumpSample(t, 90, 0.8, 0.14) + thumpSample(t - 0.18, 70, 0.55, 0.16);
+    }],
+    chime: [0.7, function(t){
+      return toneSample(t, 880, 0.35, 0.3) + toneSample(t - 0.12, 1318.5, 0.35, 0.5);
+    }]
+  };
+  function sfxUrl(name){
+    if(!sfxCache[name]) sfxCache[name] = wavUrl(sfxDefs[name][0], sfxDefs[name][1]);
+    return sfxCache[name];
+  }
+  function getSfxEl(){ if(!sfxEl) sfxEl = new Audio(); return sfxEl; }
+  function getChimeEl(){ if(!chimeEl) chimeEl = new Audio(); return chimeEl; }
+  function playOn(el, url){
+    try{
+      el.src = url;
+      var p = el.play();
+      if(p && p.catch) p.catch(function(){ /* needs one tap after page load */ });
+    }catch(e){}
+  }
+
+  /* main path: Web Audio when it is running; fallback path: <audio> element */
+  var audioCtx = null;
+  var bufCache = {};
+  function getCtx(){
+    if(!audioCtx || audioCtx.state === 'closed'){
+      try{ audioCtx = new (window.AudioContext || window.webkitAudioContext)(); }
+      catch(e){ audioCtx = null; }
+    }
+    return audioCtx;
+  }
+  function resumeCtx(){
+    var ctx = getCtx();
+    if(ctx && ctx.state !== 'running'){
+      try{
+        var r = ctx.resume();
+        if(r && r.catch) r.catch(function(){});
+      }catch(e){}
+    }
+    return ctx;
+  }
+  function playSfx(name, el){
+    var ctx = getCtx();
+    if(ctx && ctx.state === 'running'){
+      try{
+        var b = bufCache[name];
+        if(!b){
+          var d = sfxDefs[name];
+          var n = Math.floor(RATE * d[0]);
+          b = ctx.createBuffer(1, n, RATE);
+          var ch = b.getChannelData(0);
+          for(var i=0;i<n;i++) ch[i] = d[1](i / RATE);
+          bufCache[name] = b;
+        }
+        var src = ctx.createBufferSource();
+        src.buffer = b;
+        src.connect(ctx.destination);
+        src.start();
+        return;
+      }catch(e){ /* fall through to the <audio> path */ }
+    }
+    resumeCtx();
+    playOn(el, sfxUrl(name));
+  }
+  function playVoice(){
+    if(!state.audioData) return;
+    playOn(getSfxEl(), state.audioData);
+  }
+  function playTick(){ playSfx('tick', getSfxEl()); }
+  function playHeartbeat(){ playSfx('heart', getSfxEl()); }
+  function playMilestone(){ playSfx('chime', getChimeEl()); }
+
+  /* the first tap unlocks audio for the whole session */
+  function unlockAudio(){
+    resumeCtx();
+    if(audioUnlocked) return;
+    audioUnlocked = true;
+    var quiet = silentWavUrl();
+    [getSfxEl(), getChimeEl()].forEach(function(el){
+      try{
+        el.src = quiet;
+        var p = el.play();
+        if(p && p.catch) p.catch(function(){});
+      }catch(e){}
+    });
+  }
+  /* iOS leaves the audio engine "interrupted" after the app was in the
+     background; the only cure is to rebuild it inside the next touch. */
+  var needRebuild = false;
+  function rebuildAudio(){
+    needRebuild = false;
+    if(audioCtx){ try{ audioCtx.close(); }catch(e){} audioCtx = null; }
+    var ctx = getCtx();
+    if(ctx){
+      try{
+        var r = ctx.resume();
+        if(r && r.catch) r.catch(function(){});
+        var b = ctx.createBuffer(1, 1, RATE);
+        var s = ctx.createBufferSource();
+        s.buffer = b; s.connect(ctx.destination); s.start(0);
+      }catch(e){}
+    }
+    audioUnlocked = false;
+    unlockAudio();
+  }
+  function gestureAudio(){
+    if(needRebuild) rebuildAudio(); else unlockAudio();
+  }
+  function ensureAudioCtx(){
+    unlockAudio();
+    syncKeepAlive();
+  }
+  function reviveAudio(){
+    resumeCtx();
+    syncKeepAlive();
+    if(autoRunning) autoPoll();
+  }
+
+  var milestoneTimer = null;
+  function showMilestoneToast(n){
+    milestoneText.textContent = 'Круг: ' + n;
+    milestoneToast.classList.add('show');
+    clearTimeout(milestoneTimer);
+    milestoneTimer = setTimeout(function(){ milestoneToast.classList.remove('show'); }, 4200);
+  }
+  milestoneContinue.addEventListener('click', function(){
+    clearTimeout(milestoneTimer);
+    milestoneToast.classList.remove('show');
+  });
+  milestoneReset.addEventListener('click', function(){
+    clearTimeout(milestoneTimer);
+    milestoneToast.classList.remove('show');
+    doReset();
+  });
+
+  function playFeedback(){
+    if(state.soundMode === 'tick') playTick();
+    else if(state.soundMode === 'heartbeat') playHeartbeat();
+    else if(state.soundMode === 'voice') playVoice();
+  }
+
+  function scrollToBottom(){
+    requestAnimationFrame(function(){ counterArea.scrollTop = counterArea.scrollHeight; });
+  }
+
+  function renderEntryDom(n, animate){
+    var prevCurrent = thread.querySelector('.entry.current');
+    if(prevCurrent) prevCurrent.classList.remove('current');
+    var active = getActive();
+    var div = document.createElement('div');
+    div.className = 'entry current';
+    if(!animate) div.style.animation = 'none';
+    var w = document.createElement('span');
+    w.className = 'w';
+    w.textContent = active ? active.label : '';
+    var num = document.createElement('span');
+    num.className = 'n';
+    num.textContent = n;
+    div.appendChild(w);
+    div.appendChild(num);
+    thread.appendChild(div);
+  }
+
+  function renderCounterScreen(){
+    var active = getActive();
+    thread.innerHTML = '';
+    if(!active){
+      emptyState.hidden = false;
+      thread.hidden = true;
+      tapHint.hidden = true;
+      wordPreview.textContent = '—';
+      totalNum.textContent = '0';
+      undoBtn.hidden = true;
+      return;
+    }
+    wordPreview.textContent = active.label;
+    var hasHistory = active.history.length > 0;
+    emptyState.hidden = true;
+    thread.hidden = false;
+    tapHint.hidden = !hasHistory;
+    active.history.forEach(function(n, i){
+      renderEntryDom(n, false);
+    });
+    totalNum.textContent = active.count;
+    undoBtn.hidden = active.history.length === 0;
+    scrollToBottom();
+  }
+
+  function addCount(quiet){
+    var active = getActive();
+    if(!active) return;
+    active.count += 1;
+    active.history.push(active.count);
+    if(active.history.length > MAX_HISTORY){ active.history.shift(); }
+    tapHint.hidden = false;
+    renderEntryDom(active.count, true);
+    totalNum.textContent = active.count;
+    undoBtn.hidden = false;
+    scrollToBottom();
+    saveState();
+    if(!quiet) playFeedback();
+    if(state.target > 0 && active.count % state.target === 0){
+      if(!quiet) playMilestone();
+      showMilestoneToast(active.count);
+    }
+  }
+
+  function undoLast(){
+    var active = getActive();
+    if(!active || active.history.length === 0) return;
+    active.history.pop();
+    active.count = Math.max(0, active.count - 1);
+    renderCounterScreen();
+    saveState();
+  }
+
+  function doReset(){
+    var active = getActive();
+    if(!active) return;
+    stopAuto();
+    active.count = 0;
+    active.history = [];
+    renderCounterScreen();
+    saveState();
+  }
+
+  counterArea.addEventListener('click', function(e){
+    if(e.target.closest('button') || e.target.closest('input')) return;
+    addCount();
+  });
+
+  resetBtn.addEventListener('click', function(){
+    if(!resetArmed){
+      resetArmed = true;
+      resetBtn.textContent = 'Точно сбросить?';
+      clearTimeout(resetArmTimeout);
+      resetArmTimeout = setTimeout(function(){
+        resetArmed = false;
+        resetBtn.textContent = 'Сбросить';
+      }, 2800);
+    } else {
+      resetArmed = false;
+      clearTimeout(resetArmTimeout);
+      resetBtn.textContent = 'Сбросить';
+      doReset();
+    }
+  });
+
+  undoBtn.addEventListener('click', function(e){ e.stopPropagation(); undoLast(); });
+
+  /* ---------- list sheet ---------- */
+  function renderList(){
+    plist.innerHTML = '';
+    state.counters.forEach(function(c){
+      var card = document.createElement('div');
+      card.className = 'pcard' + (c.id === state.activeId ? ' active' : '');
+
+      var main = document.createElement('button');
+      main.className = 'pmain';
+      var lbl = document.createElement('span');
+      lbl.className = 'plabel';
+      lbl.textContent = c.label;
+      var cnt = document.createElement('span');
+      cnt.className = 'pcount';
+      cnt.textContent = c.count + ' ' + (c.id === state.activeId ? '· выбрано' : '');
+      main.appendChild(lbl);
+      main.appendChild(cnt);
+      main.addEventListener('click', function(){
+        state.activeId = c.id;
+        saveState();
+        renderList();
+        renderCounterScreen();
+        listOverlay.hidden = true;
+      });
+
+      var actions = document.createElement('div');
+      actions.className = 'pactions';
+
+      var editBtn = document.createElement('button');
+      editBtn.className = 'pbtn';
+      editBtn.setAttribute('aria-label','Переименовать');
+      editBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"></path></svg>';
+      editBtn.addEventListener('click', function(){ startRename(card, c); });
+
+      var delBtn = document.createElement('button');
+      delBtn.className = 'pbtn';
+      delBtn.setAttribute('aria-label','Удалить');
+      delBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"></path><path d="M10 11v6"></path><path d="M14 11v6"></path></svg>';
+      delBtn.addEventListener('click', function(){ removeCounter(c.id); });
+
+      actions.appendChild(editBtn);
+      actions.appendChild(delBtn);
+
+      card.appendChild(main);
+      card.appendChild(actions);
+      plist.appendChild(card);
+    });
+  }
+
+  function startRename(card, c){
+    card.classList.add('rename');
+    card.innerHTML = '';
+    var input = document.createElement('input');
+    input.type = 'text';
+    input.value = c.label;
+    card.appendChild(input);
+    var save = document.createElement('button');
+    save.className = 'pbtn';
+    save.setAttribute('aria-label','Сохранить');
+    save.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>';
+    card.appendChild(save);
+    input.focus();
+    input.select();
+    function commit(){
+      var v = input.value.trim();
+      if(v) c.label = v;
+      saveState();
+      renderList();
+      if(c.id === state.activeId) renderCounterScreen();
+    }
+    save.addEventListener('click', commit);
+    input.addEventListener('keydown', function(e){ if(e.key === 'Enter') commit(); });
+  }
+
+  function removeCounter(id){
+    var idx = state.counters.findIndex(function(c){ return c.id === id; });
+    if(idx === -1) return;
+    state.counters.splice(idx, 1);
+    if(state.activeId === id){
+      state.activeId = state.counters[0] ? state.counters[0].id : null;
+    }
+    saveState();
+    renderList();
+    renderCounterScreen();
+  }
+
+  function addCounterPhrase(text){
+    var v = (text || '').trim();
+    if(!v) return;
+    var c = { id: uid(), label: v, count: 0, history: [] };
+    state.counters.push(c);
+    state.activeId = c.id;
+    saveState();
+    renderList();
+    renderCounterScreen();
+  }
+
+  addBtn.addEventListener('click', function(){
+    addCounterPhrase(addInput.value);
+    addInput.value = '';
+    addInput.focus();
+  });
+  addInput.addEventListener('keydown', function(e){
+    if(e.key === 'Enter'){
+      addCounterPhrase(addInput.value);
+      addInput.value = '';
+    }
+  });
+
+  openList.addEventListener('click', function(){ renderList(); listOverlay.hidden = false; });
+  closeList.addEventListener('click', function(){ listOverlay.hidden = true; });
+  listOverlay.addEventListener('click', function(e){ if(e.target === listOverlay) listOverlay.hidden = true; });
+  emptyAddBtn.addEventListener('click', function(){ renderList(); listOverlay.hidden = false; });
+
+  /* ---------- settings sheet ---------- */
+  openSettings.addEventListener('click', function(){ settingsOverlay.hidden = false; });
+  closeSettings.addEventListener('click', function(){ settingsOverlay.hidden = true; });
+  settingsOverlay.addEventListener('click', function(e){ if(e.target === settingsOverlay) settingsOverlay.hidden = true; });
+
+  function setVoiceStatus(msg, kind){
+    voiceStatus.textContent = msg || '';
+    voiceStatus.className = 'status-msg' + (kind ? (' ' + kind) : '');
+  }
+  function refreshVoiceUI(){
+    if(state.audioData){
+      voiceName.textContent = state.audioName || 'запись добавлена';
+      removeVoice.hidden = false;
+    } else {
+      voiceName.textContent = 'запись не добавлена';
+      removeVoice.hidden = true;
+    }
+  }
+
+  voiceInput.addEventListener('change', function(){
+    var file = voiceInput.files && voiceInput.files[0];
+    voiceInput.value = '';
+    if(!file) return;
+    if(file.size > MAX_AUDIO_BYTES){
+      setVoiceStatus('Файл слишком большой (максимум 3 МБ)', 'err');
+      return;
+    }
+    var reader = new FileReader();
+    reader.onload = function(){
+      state.audioData = reader.result;
+      state.audioName = file.name;
+      refreshVoiceUI();
+      setVoiceStatus('Запись добавлена', 'ok');
+      saveState();
+    };
+    reader.onerror = function(){ setVoiceStatus('Не удалось прочитать файл', 'err'); };
+    reader.readAsDataURL(file);
+  });
+
+  removeVoice.addEventListener('click', function(){
+    state.audioData = null;
+    state.audioName = '';
+    if(state.soundMode === 'voice') state.soundMode = 'none';
+    refreshVoiceUI();
+    refreshSoundSeg();
+    setVoiceStatus('Запись удалена', '');
+    saveState();
+  });
+
+  function refreshSoundSeg(){
+    var btns = soundSeg.querySelectorAll('button');
+    for(var i=0;i<btns.length;i++){
+      btns[i].classList.toggle('active', btns[i].getAttribute('data-mode') === state.soundMode);
+    }
+  }
+  soundSeg.addEventListener('click', function(e){
+    var btn = e.target.closest('button');
+    if(!btn) return;
+    var mode = btn.getAttribute('data-mode');
+    state.soundMode = mode;
+    refreshSoundSeg();
+    saveState();
+    unlockAudio();
+    syncKeepAlive();
+    if(mode === 'voice' && !state.audioData){
+      setVoiceStatus('Загрузите запись ниже, чтобы услышать голос', 'err');
+    } else if(mode === 'voice'){
+      playVoice();
+    } else if(mode === 'tick'){
+      playTick();
+    } else if(mode === 'heartbeat'){
+      playHeartbeat();
+    }
+  });
+
+  targetInput.addEventListener('input', function(){
+    var v = parseInt(targetInput.value, 10);
+    state.target = (isNaN(v) || v < 0) ? 0 : v;
+    saveState();
+  });
+
+  secRange.addEventListener('input', function(){
+    state.autoSec = parseInt(secRange.value, 10);
+    secValue.textContent = state.autoSec + ' сек';
+    saveState();
+  });
+
+  /* ---------- auto count: works when minimized ---------- */
+  var autoRunning = false;
+  var autoNext = 0;
+  var autoWorker = null;
+  var autoFallback = null;
+  var keepAliveEl = null;
+
+  function silentWavUrl(){
+    var rate = 8000, n = rate;
+    var buf = new ArrayBuffer(44 + n);
+    var v = new DataView(buf);
+    function s(o, t){ for(var i=0;i<t.length;i++) v.setUint8(o+i, t.charCodeAt(i)); }
+    s(0,'RIFF'); v.setUint32(4, 36+n, true); s(8,'WAVE'); s(12,'fmt ');
+    v.setUint32(16,16,true); v.setUint16(20,1,true); v.setUint16(22,1,true);
+    v.setUint32(24,rate,true); v.setUint32(28,rate,true); v.setUint16(32,1,true); v.setUint16(34,8,true);
+    s(36,'data'); v.setUint32(40,n,true);
+    for(var i=0;i<n;i++) v.setUint8(44+i, 128 + Math.round(3*Math.sin(2*Math.PI*30*i/rate)));
+    return URL.createObjectURL(new Blob([buf], {type:'audio/wav'}));
+  }
+  function startKeepAlive(){
+    try{
+      if(!keepAliveEl){
+        keepAliveEl = new Audio(silentWavUrl());
+        keepAliveEl.loop = true;
+        keepAliveEl.volume = 1;
+      }
+      var p = keepAliveEl.play();
+      if(p && p.catch) p.catch(function(){});
+      if('mediaSession' in navigator && window.MediaMetadata){
+        var a = getActive();
+        navigator.mediaSession.metadata = new MediaMetadata({ title: 'Чётки', artist: a ? a.label : '' });
+        navigator.mediaSession.playbackState = 'playing';
+        try{ navigator.mediaSession.setActionHandler('pause', function(){ stopAuto(); }); }catch(e){}
+        try{ navigator.mediaSession.setActionHandler('play', function(){ startAuto(); }); }catch(e){}
+      }
+    }catch(e){}
+  }
+  function stopKeepAlive(){
+    try{
+      if(keepAliveEl) keepAliveEl.pause();
+      if('mediaSession' in navigator) navigator.mediaSession.playbackState = 'none';
+    }catch(e){}
+  }
+  function syncKeepAlive(){
+    if(autoRunning) startKeepAlive(); else stopKeepAlive();
+  }
+  function autoPoll(){
+    if(!autoRunning) return;
+    var now = Date.now(), step = state.autoSec * 1000, due = 0;
+    while(autoNext <= now && due < 2000){ due++; autoNext += step; }
+    for(var i=0;i<due;i++) addCount(i < due - 1);
+  }
+  function startAuto(){
+    stopAuto();
+    autoRunning = true;
+    autoNext = Date.now() + state.autoSec * 1000;
+    /* ticker 1: ordinary timer (always runs, works if workers are blocked) */
+    autoFallback = setInterval(autoPoll, 500);
+    /* ticker 2: worker timer (less throttled in background); autoPoll is idempotent */
+    try{
+      var src = 'setInterval(function(){postMessage(1)},500)';
+      autoWorker = new Worker(URL.createObjectURL(new Blob([src], {type:'text/javascript'})));
+      autoWorker.onmessage = autoPoll;
+      autoWorker.onerror = function(){ if(autoWorker){ autoWorker.terminate(); autoWorker = null; } };
+    }catch(e){
+      autoWorker = null;
+    }
+    startKeepAlive();
+    ensureAudioCtx();
+    syncWake();
+    autoToggle.textContent = 'Остановить';
+    autoToggle.classList.add('running');
+  }
+  function stopAuto(){
+    autoRunning = false;
+    if(autoWorker){ autoWorker.terminate(); autoWorker = null; }
+    if(autoFallback){ clearInterval(autoFallback); autoFallback = null; }
+    syncKeepAlive();
+    autoToggle.textContent = 'Запустить';
+    autoToggle.classList.remove('running');
+  }
+  autoToggle.addEventListener('click', function(){ if(autoRunning) stopAuto(); else startAuto(); });
+  document.addEventListener('visibilitychange', function(){
+    if(!autoRunning) return;
+    startKeepAlive();
+    ensureAudioCtx();
+    autoPoll();
+  });
+  window.addEventListener('pageshow', function(){ if(autoRunning){ startKeepAlive(); autoPoll(); } });
+
+  /* ---------- keep screen on ---------- */
+  var wakeLock = null;
+  var wakeSwitch = document.getElementById('wakeSwitch');
+  var wakeStatus = document.getElementById('wakeStatus');
+  function releaseWake(){
+    if(wakeLock){ try{ wakeLock.release(); }catch(e){} wakeLock = null; }
+  }
+  function syncWake(){
+    if(!state.keepAwake || document.visibilityState !== 'visible'){ releaseWake(); return; }
+    if(wakeLock) return;
+    if(!('wakeLock' in navigator)){
+      wakeStatus.textContent = 'Этот браузер не поддерживает запрет гашения экрана';
+      wakeStatus.className = 'status-msg err';
+      return;
+    }
+    navigator.wakeLock.request('screen').then(function(l){
+      wakeLock = l;
+      l.addEventListener('release', function(){ if(wakeLock === l) wakeLock = null; });
+      wakeStatus.textContent = 'Экран не погаснет, пока приложение открыто';
+      wakeStatus.className = 'status-msg ok';
+    }).catch(function(){
+      wakeStatus.textContent = 'Не удалось включить — коснитесь экрана и попробуйте снова';
+      wakeStatus.className = 'status-msg err';
+    });
+  }
+  wakeSwitch.checked = !!state.keepAwake;
+  wakeSwitch.addEventListener('change', function(){
+    state.keepAwake = wakeSwitch.checked;
+    saveState();
+    if(!state.keepAwake){
+      releaseWake();
+      wakeStatus.textContent = '';
+    } else {
+      syncWake();
+    }
+  });
+  document.addEventListener('visibilitychange', syncWake);
+  document.addEventListener('click', syncWake);
+  document.addEventListener('touchend', syncWake);
+  syncWake();
+
+  /* ---------- theme ---------- */
+  function applyTheme(){
+    document.documentElement.setAttribute('data-theme', state.theme || 'dark');
+    var btns = themeSwatches.querySelectorAll('.swatch');
+    for(var i=0;i<btns.length;i++){
+      btns[i].classList.toggle('active', btns[i].getAttribute('data-theme') === (state.theme || 'dark'));
+    }
+  }
+  themeSwatches.addEventListener('click', function(e){
+    var btn = e.target.closest('.swatch');
+    if(!btn) return;
+    state.theme = btn.getAttribute('data-theme');
+    applyTheme();
+    saveState();
+  });
+
+  /* ---------- sound recovery after minimize ---------- */
+  document.addEventListener('visibilitychange', function(){
+    if(document.visibilityState === 'visible') reviveAudio();
+  });
+  window.addEventListener('pageshow', reviveAudio);
+  window.addEventListener('focus', reviveAudio);
+  document.addEventListener('visibilitychange', function(){
+    if(document.visibilityState === 'hidden') needRebuild = true;
+  });
+  window.addEventListener('pagehide', function(){ needRebuild = true; });
+  /* capture phase: audio is revived before the tap is counted */
+  document.addEventListener('touchend', gestureAudio, true);
+  document.addEventListener('click', gestureAudio, true);
+  document.addEventListener('touchstart', ensureAudioCtx, {passive:true});
+
+  /* ---------- initial paint ---------- */
+  applyTheme();
+  refreshSoundSeg();
+  targetInput.value = (typeof state.target === 'number') ? state.target : 100;
+  secRange.value = state.autoSec || 3;
+  secValue.textContent = (state.autoSec || 3) + ' сек';
+  refreshVoiceUI();
+  renderCounterScreen();
+})();
+</script>
+</body>
+</html>
